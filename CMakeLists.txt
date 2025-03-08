@@ -53,7 +53,7 @@ set(SOURCE_EXTERNAL_FILES
     index.html
 )
 
-set(DEST_DIR ${CMAKE_BYNARY_DIR})
+set(DEST_DIR ${CMAKE_BINARY_DIR})
 
 foreach(FILE ${SOURCE_EXTERNAL_FILES})
     add_custom_command(
