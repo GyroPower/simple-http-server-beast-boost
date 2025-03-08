@@ -47,3 +47,18 @@ if(WIN32)
 else()
     target_link_libraries(simpleHttpServer-boost-beast ${Boost_LIBRARIES})
 endif()
+
+
+set(SOURCE_EXTERNAL_FILES
+    index.html
+)
+
+set(DEST_DIR ${CMAKE_BYNARY_DIR})
+
+foreach(FILE ${SOURCE_FILES})
+    add_custom_command(
+        TARGET simpleHttpServer-boost-beast POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${FILE} ${DEST_DIR}
+        COMMENT "Copying ${FILE} to ${DEST_DIR}"
+    )
+endforeach()
