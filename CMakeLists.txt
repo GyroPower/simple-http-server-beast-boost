@@ -55,10 +55,13 @@ set(SOURCE_EXTERNAL_FILES
 
 set(DEST_DIR ${CMAKE_BINARY_DIR})
 
-foreach(FILE ${SOURCE_EXTERNAL_FILES})
-    add_custom_command(
+# foreach(FILE ${SOURCE_EXTERNAL_FILES})
+    
+# endforeach()
+add_custom_command(
         TARGET simpleHttpServer-boost-beast POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${FILE} ${DEST_DIR}
-        COMMENT "Copying ${FILE} to ${DEST_DIR}"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/index.html
+        ${CMAKE_BINARY_DIR}/index.html
+        COMMENT "Copying index.html to build dir"
     )
-endforeach()
+
