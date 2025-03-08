@@ -55,7 +55,7 @@ set(SOURCE_EXTERNAL_FILES
 
 set(DEST_DIR ${CMAKE_BYNARY_DIR})
 
-foreach(FILE ${SOURCE_FILES})
+foreach(FILE ${SOURCE_EXTERNAL_FILES})
     add_custom_command(
         TARGET simpleHttpServer-boost-beast POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${FILE} ${DEST_DIR}
