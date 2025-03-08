@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.26.3)
-cmake_policy(SET CMP0167 NEW)
+
+if (WIN32)
+    cmake_policy(SET CMP0167 NEW)
+endif()
 
 project(advanced_server_beast)
 
