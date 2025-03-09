@@ -39,6 +39,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 
 # Add executable
 add_executable(simpleHttpServer-boost-beast main.cpp)
+add_executable(advance_server_example_beast advance_server_beast_example.cpp)
 
 # Link libraries
 if(WIN32)
